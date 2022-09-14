@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/create_ride.css" rel="stylesheet">
+    <title>Criar Carona</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="">
+            <img src="">
+        </div>
+    </nav>
+    <section>
+        <fieldset>
+            <legend>PARTIDA</legend>
+            <div>
+                <label>Cidade:</label>
+                <input type="text">
+                <br>
+                <label>Endereço:</label>
+                <input type="text">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>DESTINO</legend>
+            <div>
+                <label>Cidade:</label>
+                <input type="text">
+                <br>
+                <label>Endereço:</label>
+                <input type="text">
+            </div>
+        </fieldset>
+        <div>
+            <div>
+                <label>Vagas:</label>
+                <input type="number" >              
+                <label>Horário:</label>
+                <input type="time">
+                <label>Data:</label>
+                <input type="date">
+                <label>Valor: R$</label>
+                <input type="number" step="0.01" name="quantity" min="0.01">
+            </div>
+        </div>
+    </section>
+    <div>
+        <a href="./available_list.html"><input type="submit" value="Descartar"></a>
+        <a href="./ride_details.html"><input type="submit" value="Criar"></a>
+    </div>
+</body>
+</html>
