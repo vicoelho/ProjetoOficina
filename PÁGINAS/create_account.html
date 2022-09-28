@@ -5,62 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
-    <link rel="stylesheet" href="/css/create_account.css">
+    <link rel="stylesheet" href="./css/create_account.css">
 </head>
 <body>
     <section>
         <fieldset>
             <legend>Cadastre já a sua conta</legend>
-            <div>
-                <label>Nome Completo:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Data de Nascimento:</label>
-                <input type="date">
-            </div>
-            <div>
-                <label>Sexo:</label>
-                <input type="radio" name="sexo" value="1">Masculino
-                <input type="radio" name="sexo" value="2">Feminino
-            </div>
-            <div>
-                <label>Email:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Senha:</label>
-                <input type="password">
-            </div>
-            <div>
-                <label>Possui Carro ?</label>
-                <input type="radio" name="carro" value="1">Sim
-                <input type="radio" name="carro" value="2">Não
-            </div>
-            <div>
-                <label>CNH:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Marca do Veículo:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Modelo do Veículo:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Placa do Veículo:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Capacidade:</label>
-                <input type="number">
+            <div class="questionario">
+                <div>
+                    <label>Nome Completo:</label><br>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>Data de Nascimento:</label><br>
+                    <input type="date">
+                </div>
+                <div>
+                    <label>Sexo:</label><br>
+                    <input type="radio" name="sexo" value="1">Masculino
+                    <input type="radio" name="sexo" value="2">Feminino
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="text">
+                </div>
+                <div>
+                    <label>Senha:</label><br>
+                    <input type="password">
+                </div>
+                <div>
+                    <label>Possui Carro ?</label><br>
+                    <input type="radio" name="carro" value="1">Sim
+                    <input type="radio" name="carro" value="2">Não
+                </div>
+                <div>
+                    <label>CNH:</label><br>
+                    <input type="text">
+                </div>
+                <div class="marca">
+                    <label>Marca do Veículo:</label><br>
+                    <input type="text">
+                </div>
+                <div class="modelo">
+                    <label>Modelo do Veículo:</label><br>
+                    <input type="text">
+                </div><br>
+                <div class="placa">
+                    <label>Placa do Veículo:</label><br>
+                    <input type="text">
+                </div>
+                <div class="capacidade">
+                    <label>Capacidade:</label><br>
+                    <input type="number">
+                </div>
             </div>
         </fieldset>
-        <div>
-            <a href="/create_account.html"><input type="submit" value="Descartar"></a>
-            <a href="/available_list.html"><input type="submit" value="Criar"></a>
+        <div class="botões">
+            <a href="login.html" class="descartar"><input type="submit" value="Descartar"></a>
+            <a href="available_list.html" class="criar"><input type="submit" value="Criar"></a>
         </div>
     </section>
 </body>
