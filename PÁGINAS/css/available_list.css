@@ -1,0 +1,96 @@
+body {
+    background-color: #484444;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.Navegacao {
+    padding-top: 12px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.NavegacaoBotao {
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.NavegacaoImagem {
+    height: 40px;
+    width: 40px;
+}
+
+.Busca {
+    display: flex;
+    justify-content: center;
+}
+
+.BuscaDivAll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: #282424;
+    padding: 10px 20px;
+    border: 5px;
+    border-radius: 5px;
+    border-color: #282424;
+}
+
+.BuscaDivParametros {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: white;
+}
+
+.BuscaTexto {
+    height: 25px;
+}
+
+.BuscaBuscar {
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+
+.BuscaBuscarImagem {
+    height: 40px;
+    width: 40px;
+}
+
+.Itens {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.ItensDivAll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: #282424;
+    padding: 10px 20px;
+    border: 5px;
+    border-radius: 5px;
+    border-color: #282424;
+    color: white;
+}
+
+.ItensImagem {
+    height: 170px;
+    width: 350px;
+}
+
+.ItensDescricao {
+    display: flex;
+    flex-direction: column;
+}
