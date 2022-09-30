@@ -50,12 +50,16 @@ input{
     display: inline-block;
 }
 .botões{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     width: 55vw;
+    align-content: flex-end;
 }
 .criar{
+    position: absolute;
     display: inline;
+    right: 0;
 }
 .criar input{
     width: 150px;
@@ -64,8 +68,15 @@ input{
     padding: 6px 24px;
     border: none;
 }
+.criar input:hover{
+    cursor:pointer;
+    background-color: rgba(80, 80, 80, 1);
+    transition: ease-in-out 300ms;
+}
 .descartar{
+    position: absolute;
     display: inline;
+    right: 155px;
 }
 .descartar   input{
     width: 150px;
@@ -73,5 +84,10 @@ input{
     border-radius: 12px;
     padding: 6px 24px;
     border: none;
+}
+.descartar input:hover{
+    cursor:pointer;
+    background-color: rgba(80, 80, 80, 1);
+    transition: ease-in-out 300ms;
 }
 ;
