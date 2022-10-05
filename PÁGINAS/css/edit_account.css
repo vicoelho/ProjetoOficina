@@ -56,36 +56,36 @@ input{
     width: 55vw;
     align-content: flex-end;
 }
-.editar{
+.confirmar{
     position: absolute;
     display: inline;
     right: 0;
 }
-.editar input{
+.confirmar input{
     width: 150px;
     background-color: rgb(251, 236, 93);
     border-radius: 12px;
     padding: 6px 24px;
     border: none;
 }
-.editar input:hover{
+.confirmar input:hover{
     cursor:pointer;
     background-color: rgba(80, 80, 80, 1);
     transition: ease-in-out 300ms;
 }
-.voltar{
+.descartar{
     position: absolute;
     display: inline;
     right: 155px;
 }
-.voltar  input{
+.descartar   input{
     width: 150px;
     background-color: #9D9D9D;
     border-radius: 12px;
     padding: 6px 24px;
     border: none;
 }
-.voltar input:hover{
+.descartar input:hover{
     cursor:pointer;
     background-color: rgba(80, 80, 80, 1);
     transition: ease-in-out 300ms;

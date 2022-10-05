@@ -5,49 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informações do Usuário</title>
-    <link rel="stylesheet" href="/css/create_account.css">
+    <link rel="stylesheet" href="./css/user_account.css">
 </head>
 <body>
     <section>
         <fieldset>
             <legend>Meus Dados</legend>
-            <div>
-                <label>Nome Completo:</label>
-            </div>
-            <div>
-                <label>Data de Nascimento:</label>
-            </div>
-            <div>
-                <label>Sexo:</label>
-            </div>
-            <div>
-                <label>Email:</label>
-            </div>
-            <div>
-                <label>Senha:</label>
-            </div>
-            <div>
-                <label>Possui Carro:</label>
-            </div>
-            <div>
-                <label>CNH:</label>
-            </div>
-            <div>
-                <label>Marca do Veículo:</label>
-            </div>
-            <div>
-                <label>Modelo do Veículo:</label>
-            </div>
-            <div>
-                <label>Placa do Veículo:</label>
-            </div>
-            <div>
-                <label>Capacidade:</label>
+            <div class="questionario">
+                <div>
+                    <label>Nome Completo:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div>
+                <div>
+                    <label>Data de Nascimento:</label><br>
+                    <input type="date" disabled="" placeholder="">
+                </div>
+                <div>
+                    <label>Sexo:</label><br>
+                    <input type="radio" name="sexo" value="1" disabled="">Masculino
+                    <input type="radio" name="sexo" value="2" disabled="">Feminino
+                </div>
+                <div>
+                    <label>Celular:</label><br>
+                    <input type="tel" disabled="" placeholder="">
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div>
+                <div>
+                    <label>Senha:</label><br>
+                    <input type="password" disabled="" placeholder="">
+                </div>
+                <div>
+                    <label>Possui Carro ?</label><br>
+                    <input type="radio" name="carro" value="1" disabled="" >Sim
+                    <input type="radio" name="carro" value="2" disabled="" >Não
+                </div>
+                <div>
+                    <label>CNH:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div>
+                <div class="marca">
+                    <label>Marca do Veículo:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div>
+                <div class="modelo">
+                    <label>Modelo do Veículo:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div><br>
+                <div class="placa">
+                    <label>Placa do Veículo:</label><br>
+                    <input type="text" disabled="" placeholder="">
+                </div>
+                <div class="capacidade">
+                    <label>Capacidade:</label><br>
+                    <input type="number" disabled="" placeholder="">
+                </div>
             </div>
         </fieldset>
-        <div>
-            <a href="/create_account.html"><input type="submit" value="Voltar"></a>
-            <a href="/available_list.html"><input type="submit" value="Editar"></a>
+        <div class="botões">
+            <a href="./available_list.html" class="voltar"><input type="submit" value="Voltar"></a>
+            <a href="./edit_account.html" class="editar"><input type="submit" value="Editar"></a>
         </div>
     </section>
 </body>
