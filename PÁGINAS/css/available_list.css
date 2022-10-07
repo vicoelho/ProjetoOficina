@@ -20,6 +20,7 @@ body {
 }
 
 .NavegacaoBotao {
+    margin-left: 85%;
     border: none;
     height: 40px;
     width: 40px;
@@ -29,10 +30,44 @@ body {
     height: 40px;
     width: 40px;
 }
+.NavegacaoImagem:hover{
+    cursor: pointer;
+}
+
+.VoltarImagem {
+    height: 60px;
+    width: 60px;
+}
 
 .Busca {
     display: flex;
     justify-content: center;
+}
+.BuscaCheckbox1{
+    padding: 9px;
+    border-radius: 8px 0 0 8px;
+    background-color: #707070
+}
+.BuscaCheckbox1:hover{
+    cursor:pointer;
+    background-color: rgba(254, 239, 93, 70);
+    transition: ease-in-out 200ms;
+}
+.BuscaCheckbox1:focus{
+    background-color: rgba(254, 239, 93, 70);
+}
+.BuscaCheckbox2{
+    padding: 9px;
+    border-radius: 0 8px 8px 0;
+    background-color: #707070
+}
+.BuscaCheckbox2:hover{
+    cursor:pointer;
+    background-color: rgba(254, 239, 93, 70);
+    transition: ease-in-out 200ms;
+}
+.BuscaCheckbox2:focus{
+    background-color: rgba(254, 239, 93, 70);
 }
 
 .BuscaDivAll {
@@ -68,6 +103,9 @@ body {
     height: 40px;
     width: 40px;
 }
+.BuscaBuscarImagem:hover {
+   cursor: pointer;
+}
 
 .Itens {
     display: flex;
@@ -76,6 +114,7 @@ body {
 }
 
 .ItensDivAll {
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,7 +129,9 @@ body {
 
 .ItensImagem {
     height: 170px;
-    width: 350px;
+    width: 330px;
+    border-radius: 4px;
+    margin: 10px 0px;
 }
 
 .ItensDescricao {
@@ -99,8 +140,8 @@ body {
 }
 .Adicionar{
     position: fixed;
-    margin-left: 90%;
-    margin-bottom: 90%;
+    left: 90%;
+    top: 85%;
     height: 80px;
     width: 80px;
 }
