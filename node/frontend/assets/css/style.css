@@ -8,6 +8,24 @@
 .barra{
   background-color: black;
 }
+.questionario_error{
+  margin-left: 85px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  width: fit-content;
+  color: rgba(255,60,0,50);
+}
+.questionario_success{
+  margin-left: 85px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 4px;
+  border-radius: 4px;
+  width: fit-content;
+  color: rgba(60,255,0,50);
+}
 ul{
   display: flex;
   width: 100vw;
