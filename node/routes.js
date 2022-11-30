@@ -29,5 +29,7 @@ route.get('/caronas/index', loginRequired, caronasController.index);
 route.get('/criar/index', loginRequired, criarController.index);
 route.post('/criar/criar', criarController.criar);
 
+//ROTAS DE DETALHES CORRIDAS
+//route.get('ROTA COM NOME', FUNÇÃO DE VERIFICAR SE ESTA LOGADO, FUNÇÃO DE CARREGAR A PAGINA);
 
 module.exports = route;

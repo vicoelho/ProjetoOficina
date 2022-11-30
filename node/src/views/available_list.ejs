@@ -39,17 +39,20 @@
         </header>
 
         <main class="Itens">
+            <% caronas.forEach(carona =>{ %>
             <div class="ItensDivAll">
                 <div class="ItensDivImagens">
                     <a href="/detalhes/index"><img src="/assets/img/Marazzi_Grande_Solid_Color_Look_M38G.jpg.400x0_q500.jpg" class="ItensImagem"></a>
                 </div>
                 <div class="ItensDescricao">
-                    <label>De:</label>
-                    <label>Para:</label>
-                    <label>Motorista: <a href="/perfil/index">{perfil_motorista}</a></label>
-                    <label>Avaliação:</label> <label>Vagas: </label>
+                    <label>De: <%= carona.cidade_origem %>, <%= carona.endereco_origem %>  </label>
+                    <label>Para: <%= carona.cidade_destino %>, <%= carona.endereco_destino %></label>
+                    <label>Motorista: <a href='/perfil/index'><%= carona.motorista %></a></label>
+                    <label>Avaliação: <%= carona.avaliacao %></label> <label>Vagas: <%= carona.vagas %></label>
                 </div>
             </div>
+            <br>
+            <% });  %>
         </main>
 
         <a href="/criar/index">

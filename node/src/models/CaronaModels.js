@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CaronaSchema = new mongoose.Schema({
-    motorista: {type: String, require:true},
+    motorista: {type: Object, require:true},
     cidade_origem: {type: String, require:true},
     endereco_origem: {type: String, require:true},
     cidade_destino: {type: String, require:true},
@@ -19,21 +19,20 @@ class Carona{
   constructor(body){
     this.body = body;
     this.errors = [];
-    this.user = null;
+    this.carona = null;
   }
+
+  //async buscaPorId(id){
+  //  if(typeof id !== String) return ;
+  //  const user = await CaronaModel.findById(id);
+  //  return user;
+  //}
 
   async register(){
     this.valida();
     if(this.errors.length > 0)return;
 
-    await this.userExists();
-
-    this.user = await CaronaModel.create(this.body);
-  }
-
-  async userExists(){
-    this.user = await CaronaModel.findOne({email: this.body.email});
-    if(this.user) this.errors.push('Usuário já cadastrado');
+    this.carona = await CaronaModel.create(this.body);
   }
 
   valida(){
@@ -81,7 +80,7 @@ class Carona{
       }
     }
     this.body = {
-      motorista: user,
+      motorista: this.body.user,
       cidade_origem: this.body.cidade_origem,
       endereco_origem: this.body.endereco_origem,
       cidade_destino: this.body.cidade_destino,
@@ -90,9 +89,15 @@ class Carona{
       horario: this.body.horario,
       data: this.body.data,
       valor: this.body.valor,
-      passageiros: this.body.passageiros
+      passageiros: this.body.passageiros,
+      avaliacoes: this.body.avaliacoes
     };
   }
 };
 
+Carona.buscaCaronas = async function(){
+  const caronas = await CaronaModel.find()
+    .sort({criadosEm: -1});
+  return caronas;
+}
 module.exports = Carona;

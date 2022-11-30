@@ -1,5 +1,5 @@
 <%- include('includes/head'); %>
-<link href="/assets/css/create_ride.css" rel="stylesheet">
+<link href="/assets/css/ride_details.css" rel="stylesheet">
 <nav>
     <div>
         <img src="">
@@ -8,14 +8,12 @@
 </nav>
 <form class="general_div" method="POST" action="/criar/criar">
     <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
-    <input type= "hidden" name= "user" value= "<%= user.nome %> ">
-    <input type= "hidden" name= "avaliacoes" value= "<%= user.avaliacoes %> ">
     <%- include('includes/messages'); %>
     <fieldset class="campo1">
         <legend>PARTIDA</legend>
         <div class="div_partida">
             <label>Cidade:</label><br>
-            <input type="text" name="cidade_origem">
+            <input type="text" name="cidade_origem" value="<%= carona.cidade %> ">
             <br>
             <label>Endereço:</label><br>
             <input type="text" name="endereco_origem">
@@ -51,7 +49,7 @@
     </div>
     <div class="after_fieldsets2">
         <a href="/caronas/index" class="descartar"><input type="button" value="Descartar"></a>
-        <a class="criar"><input type="submit" value="Criar"></a>
+        <a class="criar"><input type="button" value="Editar"></a>
     </div>
 </form>
 <%- include('includes/footer'); %>
