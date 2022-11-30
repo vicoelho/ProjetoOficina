@@ -5,6 +5,7 @@ const cadastroController = require('./src/controllers/cadastroController');
 const perfilController = require('./src/controllers/perfilController');
 const caronasController = require('./src/controllers/caronasController');
 const criarController = require('./src/controllers/criarController');
+const detalhesController = require('./src/controllers/detalhesController');
 const {loginRequired} = require('./src/middlewares/middlewares');
 
 //ROTAS DA HOME
@@ -30,6 +31,6 @@ route.get('/criar/index', loginRequired, criarController.index);
 route.post('/criar/criar', criarController.criar);
 
 //ROTAS DE DETALHES CORRIDAS
-//route.get('ROTA COM NOME', FUNÇÃO DE VERIFICAR SE ESTA LOGADO, FUNÇÃO DE CARREGAR A PAGINA);
+route.get('/detalhes/index', loginRequired, detalhesController.index);
 
 module.exports = route;
