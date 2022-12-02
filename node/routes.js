@@ -22,6 +22,7 @@ route.post('/cadastro/cadastro', cadastroController.cadastro);
 
 //ROTAS DE PERFIL
 route.get('/perfil/index', loginRequired, perfilController.index);
+route.get('/perfil/index/:id', loginRequired, perfilController.profile);
 
 //ROTAS DE LISTA DE CORRIDAS
 route.get('/caronas/index', loginRequired, caronasController.index);
@@ -32,5 +33,7 @@ route.post('/criar/criar', criarController.criar);
 
 //ROTAS DE DETALHES CORRIDAS
 route.get('/detalhes/index', loginRequired, detalhesController.index);
+route.get('/detalhes/index/:id', loginRequired, detalhesController.profile);
+route.post('/detalhes/entrar/:id', loginRequired, detalhesController.join);
 
 module.exports = route;

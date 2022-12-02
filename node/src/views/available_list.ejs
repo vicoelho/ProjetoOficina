@@ -40,18 +40,22 @@
 
         <main class="Itens">
             <% caronas.forEach(carona =>{ %>
-            <div class="ItensDivAll">
-                <div class="ItensDivImagens">
-                    <a href="/detalhes/index"><img src="/assets/img/Marazzi_Grande_Solid_Color_Look_M38G.jpg.400x0_q500.jpg" class="ItensImagem"></a>
+                <% if (new Date(carona.data.split("-")[0], carona.data.split("-")[1] -1, carona.data.split("-")[2]) > new Date) {%>
+                <div class="ItensDivAll">
+                    <div class="ItensDivImagens">
+                        <a href="/detalhes/index/<%= carona._id %> "><img src="/assets/img/Marazzi_Grande_Solid_Color_Look_M38G.jpg.400x0_q500.jpg" class="ItensImagem"></a>
+                    </div>
+                    <div class="ItensDescricao">
+                        <label>De: <%= carona.cidade_origem %>, <%= carona.endereco_origem %>  </label>
+                        <label>Para: <%= carona.cidade_destino %>, <%= carona.endereco_destino %></label>
+                        <label>Motorista: <a href='/perfil/index/<%= carona.motorista_id %>'><%= carona.motorista %></a></label>
+                        <label>Data: <%= carona.data %> </label> <label>horario: <%= carona.horario %> </label>
+                        <label>Vagas: <%= carona.vagas %> / <%= carona.passageiros.length %></label>
+                        <label>Avaliação: <%= carona.avaliacao %></label>
+                    </div>
                 </div>
-                <div class="ItensDescricao">
-                    <label>De: <%= carona.cidade_origem %>, <%= carona.endereco_origem %>  </label>
-                    <label>Para: <%= carona.cidade_destino %>, <%= carona.endereco_destino %></label>
-                    <label>Motorista: <a href='/perfil/index'><%= carona.motorista %></a></label>
-                    <label>Avaliação: <%= carona.avaliacao %></label> <label>Vagas: <%= carona.vagas %></label>
-                </div>
-            </div>
-            <br>
+                <br>
+                <% }; %>
             <% });  %>
         </main>
 

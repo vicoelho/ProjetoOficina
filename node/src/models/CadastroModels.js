@@ -150,4 +150,9 @@ class Cadastro{
   }
 };
 
+Cadastro.buscaPorId = async function(id){
+  const user = await CadastroModel.findById(id);
+  return user;
+}
+
 module.exports = Cadastro;

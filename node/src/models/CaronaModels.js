@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const CaronaSchema = new mongoose.Schema({
     motorista: {type: Object, require:true},
+    motorista_id: {type: String, require:true},
     cidade_origem: {type: String, require:true},
     endereco_origem: {type: String, require:true},
     cidade_destino: {type: String, require:true},
@@ -71,6 +72,9 @@ class Carona{
 
     //Valor preenchido
     if(this.body.horario == "") this.errors.push('Preencher o valor ');
+
+    //Cadastrar Passageiro caso tenha
+    if(this.body.nome_passageiro) this.passageiros.push(this.body.nome_passageiro);
   }
 
   cleanUp(){
@@ -81,6 +85,7 @@ class Carona{
     }
     this.body = {
       motorista: this.body.user,
+      motorista_id: this.body.id,
       cidade_origem: this.body.cidade_origem,
       endereco_origem: this.body.endereco_origem,
       cidade_destino: this.body.cidade_destino,
@@ -93,6 +98,13 @@ class Carona{
       avaliacoes: this.body.avaliacoes
     };
   }
+
+  async entrarNaCarona(id){
+    if(typeof id !== 'string') return;
+    this.valida();
+    if(this.errors.length > 0) return;
+    this.carona = await CaronaModel.findByIdAndUpdate(id, this.body, {new: true});
+  }
 };
 
 Carona.buscaCaronas = async function(){
@@ -100,4 +112,14 @@ Carona.buscaCaronas = async function(){
     .sort({criadosEm: -1});
   return caronas;
 }
+
+Carona.buscaPorId = async function(id){
+  const carona = await CaronaModel.findById(id);
+  return carona;
+}
+
+Carona.entrarNaCarona = async function(id){
+  this.carona = await CaronaModel.findByIdAndUpdate(id, this.body, {new: true});
+}
+
 module.exports = Carona;

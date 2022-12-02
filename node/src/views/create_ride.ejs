@@ -8,6 +8,7 @@
 </nav>
 <form class="general_div" method="POST" action="/criar/criar">
     <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
+    <input type= "hidden" name= "id" value= "<%= user._id %> ">
     <input type= "hidden" name= "user" value= "<%= user.nome %> ">
     <input type= "hidden" name= "avaliacoes" value= "<%= user.avaliacoes %> ">
     <%- include('includes/messages'); %>

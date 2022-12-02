@@ -6,50 +6,53 @@
         <img src="">
     </div>
 </nav>
-<form class="general_div" method="POST" action="/criar/criar">
+<form class="general_div" method="POST" action="/detalhes/entrar/:id">
     <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
+    <input type= "hidden" name= "nome_passageiro" value= "<%= user.nome %>">
     <%- include('includes/messages'); %>
     <fieldset class="campo1">
         <legend>PARTIDA</legend>
         <div class="div_partida">
             <label>Cidade:</label><br>
-            <input type="text" name="cidade_origem" value="">
+            <input type="text" name="cidade_origem" value="<%= carona.cidade_origem %> " disabled="">
             <br>
             <label>Endereço:</label><br>
-            <input type="text" name="endereco_origem">
+            <input type="text" name="endereco_origem" value="<%= carona.endereco_origem %>" disabled="">
         </div>
     </fieldset>
     <fieldset class="campo2">
         <legend>DESTINO</legend>
         <div class="div_destino">
             <label>Cidade:</label><br>
-            <input type="text" name="cidade_destino">
+            <input type="text" name="cidade_destino" value="<%= carona.cidade_destino %> " disabled="">
             <br>
             <label>Endereço:</label><br>
-            <input type="text" name="endereco_destino">
+            <input type="text" name="endereco_destino" value="<%= carona.endereco_destino%> " disabled="">
         </div>
     </fieldset>
     <div class="after_fieldsets">
         <div class="vagas">
             <label>Vagas:</label><br>
-            <input type="number" name="vagas">
+            <input type="number" name="vagas" value="<%= carona.vagas-carona.passageiros.length %>" disabled="">
         </div>
         <div class="horario">
             <label>Horário:</label><br>
-            <input type="time" name="horario">
+            <input type="time" name="horario" value="<%= carona.horario %>" disabled="">
         </div><br>
         <div class="data">
             <label>Data:</label><br>
-            <input type="date" name="data">
+            <input type="date" name="data" value="<%= carona.data %>" disabled="">
         </div>
         <div class="valor">
             <label>Valor:</label><br>
-            <input type="number" name="valor">
+            <input type="number" name="valor" value="<%= carona.valor %>" disabled="">
         </div>
     </div>
     <div class="after_fieldsets2">
-        <a href="/caronas/index" class="descartar"><input type="button" value="Descartar"></a>
-        <a class="criar"><input type="button" value="Editar"></a>
+        <a href="/caronas/index" class="descartar"><input type="button" value="Voltar"></a>
+        <% if ( carona.vagas-carona.passageiros.length > 0) {%>
+        <a class="criar"><input type="submit" value="Entrar"></a>
+        <% }; %>
     </div>
 </form>
 <%- include('includes/footer'); %>
