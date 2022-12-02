@@ -1,0 +1,58 @@
+<%- include('includes/head'); %>
+<link href="/assets/css/create_ride.css" rel="stylesheet">
+<nav>
+    <div>
+        <img src="">
+        <img src="">
+    </div>
+</nav>
+<form class="general_div" method="POST" action="/criar/criar">
+    <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
+    <input type= "hidden" name= "id" value= "<%= user._id %> ">
+    <input type= "hidden" name= "user" value= "<%= user.nome %> ">
+    <input type= "hidden" name= "avaliacoes" value= "<%= user.avaliacoes %> ">
+    <%- include('includes/messages'); %>
+    <fieldset class="campo1">
+        <legend>PARTIDA</legend>
+        <div class="div_partida">
+            <label>Cidade:</label><br>
+            <input type="text" name="cidade_origem">
+            <br>
+            <label>Endereço:</label><br>
+            <input type="text" name="endereco_origem">
+        </div>
+    </fieldset>
+    <fieldset class="campo2">
+        <legend>DESTINO</legend>
+        <div class="div_destino">
+            <label>Cidade:</label><br>
+            <input type="text" name="cidade_destino">
+            <br>
+            <label>Endereço:</label><br>
+            <input type="text" name="endereco_destino">
+        </div>
+    </fieldset>
+    <div class="after_fieldsets">
+        <div class="vagas">
+            <label>Vagas:</label><br>
+            <input type="number" name="vagas">
+        </div>
+        <div class="horario">
+            <label>Horário:</label><br>
+            <input type="time" name="horario">
+        </div><br>
+        <div class="data">
+            <label>Data:</label><br>
+            <input type="date" name="data">
+        </div>
+        <div class="valor">
+            <label>Valor:</label><br>
+            <input type="number" name="valor">
+        </div>
+    </div>
+    <div class="after_fieldsets2">
+        <a href="/caronas/index" class="descartar"><input type="button" value="Descartar"></a>
+        <a class="criar"><input type="submit" value="Criar"></a>
+    </div>
+</form>
+<%- include('includes/footer'); %>

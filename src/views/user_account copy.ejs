@@ -1,0 +1,62 @@
+<%- include('includes/head'); %>
+    <link rel="stylesheet" href="/assets/css/user_account.css">
+    <section>
+        <fieldset>
+            <legend>Meus Dados</legend>
+            <div class="questionario">
+                <div>
+                    <label>Nome Completo:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.nome %> ">
+                </div>
+                <div>
+                    <label>Data de Nascimento:</label><br>
+                    <input type="date" disabled="" value="<%= motorista.data_nascimento %>">
+                </div>
+                <div>
+                    <label>Sexo:</label><br>
+                    <input type="text" name="sexo" value="<%= motorista.sexo %>" disabled="">
+                </div>
+                <div>
+                    <label>Celular:</label><br>
+                    <input type="tel" disabled="" value="<%= motorista.celular %>">
+                </div>
+                <div>
+                    <label>Email:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.email %>">
+                </div>
+                <div>
+                    <label>Possui Carro ?</label><br>
+                    <input type="text" name="carro" value="<%= motorista.carro %>" disabled="" >
+                </div>
+                <div>
+                    <label>CNH:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.cnh %>">
+                </div>
+                <div class="marca">
+                    <label>Marca do Veículo:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.marca_do_veiculo %>">
+                </div>
+                <div class="modelo">
+                    <label>Modelo do Veículo:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.modelo_do_veiculo %>">
+                </div><br>
+                <div class="placa">
+                    <label>Placa do Veículo:</label><br>
+                    <input type="text" disabled="" value="<%= motorista.placa_do_veiculo %>">
+                </div>
+                <div class="capacidade">
+                    <label>Capacidade:</label><br>
+                    <input type="number" disabled="" value="<%= motorista.capacidade_do_veiculo %>">
+                </div>
+                <div class="avaliação">
+                    <label>Avaliaçôes:</label><br>
+                    <label></label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="botões">
+            <a href="/" class="voltar"><input type="submit" value="Voltar"></a>
+            <a href="/edit/index" class="editar"><input type="submit" value="Editar"></a>
+        </div>
+    </section>
+    <%- include('includes/footer'); %>

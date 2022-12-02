@@ -1,0 +1,65 @@
+<%- include('includes/head'); %>
+        <link rel="stylesheet" href="/assets/css/available_list.css">
+        <nav class="Navegacao">
+            <a class="Voltar" href="/">
+                <img src="/assets/img/back_arrow_icon_134660.png" class="VoltarImagem">
+            </a>
+            <button class="NavegacaoBotao">
+                <img src="/assets/img/favpng_chat-icon.png" class="NavegacaoImagem">
+            </button>
+            
+            <a href="/perfil/index">
+                <img src="/assets/img/kisspng-clip-art-portable-network-graphics-computer-icons-user-staff-person-man-profile-boss-circle-svg-png-5b62ed563414a0.0114928715332099422133 - Copia.png" class="NavegacaoImagem">
+            </a>
+        </nav>
+        
+        <header class="Busca">
+            <div class="BuscaDivAll">
+                <div class="BuscaDivCheckbox">
+                    <button class="BuscaCheckbox1" value="1">Motoristas</button>
+                    <button class="BuscaCheckbox2" value="2">Passageiros</button>
+                </div>
+                <div class="BuscaDivParametros">
+                    <div class="BuscaDivOrigem">
+                        <label>De:</label>
+                        <input type="text" class="BuscaTexto">
+                    </div>
+                    <div class="BuscaDivDestino">
+                        <label>Para:</label>
+                        <input type="text" class="BuscaTexto">
+                    </div>
+                </div>
+        
+                <div class="BuscaDivBuscar">
+                    <button class="BuscaBuscar">
+                        <img src="/assets/img/glassmagnifiermagnifyingsearchsearchingweb_123111.png" class="BuscaBuscarImagem">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="Itens">
+            <% caronas.forEach(carona =>{ %>
+                <% if (new Date(carona.data.split("-")[0], carona.data.split("-")[1] -1, carona.data.split("-")[2]) > new Date) {%>
+                <div class="ItensDivAll">
+                    <div class="ItensDivImagens">
+                        <a href="/detalhes/index/<%= carona._id %> "><img src="/assets/img/Marazzi_Grande_Solid_Color_Look_M38G.jpg.400x0_q500.jpg" class="ItensImagem"></a>
+                    </div>
+                    <div class="ItensDescricao">
+                        <label>De: <%= carona.cidade_origem %>, <%= carona.endereco_origem %>  </label>
+                        <label>Para: <%= carona.cidade_destino %>, <%= carona.endereco_destino %></label>
+                        <label>Motorista: <a href='/perfil/index/<%= carona.motorista_id %>'><%= carona.motorista %></a></label>
+                        <label>Data: <%= carona.data %> </label> <label>horario: <%= carona.horario %> </label>
+                        <label>Vagas: <%= carona.vagas %> / <%= carona.passageiros.length %></label>
+                        <label>Avaliação: <%= carona.avaliacao %></label>
+                    </div>
+                </div>
+                <br>
+                <% }; %>
+            <% });  %>
+        </main>
+
+        <a href="/criar/index">
+            <img src="/assets/img/1486395885-plus_80605.png" class="Adicionar">
+        </a>
+<%- include('includes/footer'); %>

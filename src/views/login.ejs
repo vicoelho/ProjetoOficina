@@ -1,0 +1,32 @@
+<%- include('includes/head'); %>
+<link rel="stylesheet" href="/assets/css/login.css" >
+<section>
+    <form class="janelas" method="POST" action="/login/login">
+        <input type= "hidden" name= "_csrf" value= <%= csrfToken%>>
+        <p class="boasvindas">Boas-vindas de volta!</p>
+        <div>
+            <label for="email">E-MAIL:</label><br>
+            <input class="email" type="text" name="email">
+        </div>
+        <br>
+        <div>
+            <label for="senha">SENHA:</label><br>
+            <input class="senha" type="password" name="senha">
+        </div>
+        <div class="cadastrar">
+            <p>Ainda não está cadastrado ?</p>
+            <a href="/cadastro/index">Registre-se</a>
+        </div>
+        <br>
+        <div class="voltar" action="/">
+            <a href="/">
+                <input type="button" value="Voltar">
+            </a>
+        </div>
+        <div class="entrar">
+            <input type="submit" value="Entrar">
+        </div>
+        <%- include('includes/messages'); %>
+    </form>
+</section>
+<%- include('includes/footer'); %>
