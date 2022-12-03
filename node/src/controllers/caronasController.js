@@ -23,6 +23,11 @@ exports.join = async (req, res) => {
 
 exports.filtrar = async(req, res) => {
     try {
+        if(!req.body.de || !req.body.para){
+            req.flash('errors', 'Preencha todos os campos do filtro');
+            req.session.save(() => res.redirect('/caronas/index'));
+            return;
+        }
         res.redirect(`/caronas/index/${req.body.de}/${req.body.para}`);
     } catch (error) {
         console.log(error);
