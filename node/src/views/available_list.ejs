@@ -14,28 +14,25 @@
         </nav>
         
         <header class="Busca">
-            <div class="BuscaDivAll">
-                <div class="BuscaDivCheckbox">
-                    <button class="BuscaCheckbox1" value="1">Motoristas</button>
-                    <button class="BuscaCheckbox2" value="2">Passageiros</button>
-                </div>
+            <form class="BuscaDivAll" method="POST" action="/caronas/filtrar">
                 <div class="BuscaDivParametros">
+                    <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
                     <div class="BuscaDivOrigem">
                         <label>De:</label>
-                        <input type="text" class="BuscaTexto">
+                        <input type="text" class="BuscaTexto" name="de">
                     </div>
                     <div class="BuscaDivDestino">
                         <label>Para:</label>
-                        <input type="text" class="BuscaTexto">
+                        <input type="text" class="BuscaTexto" name="para">
                     </div>
                 </div>
         
                 <div class="BuscaDivBuscar">
-                    <button class="BuscaBuscar">
+                    <button class="BuscaBuscar" type="submit">
                         <img src="/assets/img/glassmagnifiermagnifyingsearchsearchingweb_123111.png" class="BuscaBuscarImagem">
                     </button>
                 </div>
-            </div>
+            </form>
         </header>
 
         <main class="Itens">
@@ -51,15 +48,16 @@
                         <label>Motorista: <a href='/perfil/index/<%= carona.motorista_id %>'><%= carona.motorista %></a></label>
                         <label>Data: <%= carona.data %> </label> <label>horario: <%= carona.horario %> </label>
                         <label>Vagas: <%= carona.vagas %> / <%= carona.passageiros.length %></label>
-                        <label>Avaliação: <%= carona.avaliacao %></label>
                     </div>
                 </div>
                 <br>
-                <% }; %>
+                <% } %>
             <% });  %>
         </main>
 
+        <% if (user.carro == "sim") {%>
         <a href="/criar/index">
             <img src="/assets/img/1486395885-plus_80605.png" class="Adicionar">
         </a>
+        <%}; %>
 <%- include('includes/footer'); %>

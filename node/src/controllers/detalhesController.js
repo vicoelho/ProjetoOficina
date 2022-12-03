@@ -1,8 +1,5 @@
 const Caronas = require('../models/CaronaModels');
 
-exports.index = (req, res) => {
-    res.render('ride_details');
-};
 
 exports.profile = async (req, res) => {
     if(!req.params.id) return res.render('404');
@@ -17,7 +14,7 @@ exports.join = async (req, res) => {
     try {
         if(!req.params.id) return res.render('404');
         const carona = new Caronas(req.body);
-        await carona.entrarNaCarona(req.params.id)
+        await carona.entrarNaCarona(req.params.id);
 
         if(carona.errors.length > 0){
             req.flash('errors', carona.errors);
@@ -26,7 +23,7 @@ exports.join = async (req, res) => {
         }
 
         req.flash('sucess', 'Carona solicitada com sucesso');
-        req.session.save(() => res.redirect('detalhes/index/${carona.carona._id}'));
+        req.session.save(() => res.redirect(`/detalhes/index/${carona.carona._id}`));
         return;
     } catch (error) {
         console.log(error);

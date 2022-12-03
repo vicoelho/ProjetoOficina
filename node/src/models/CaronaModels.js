@@ -11,7 +11,7 @@ const CaronaSchema = new mongoose.Schema({
     horario: {type: String, require:true},
     data: {type: String, require:true},
     valor: {type: String, require:true},
-    passageiros: Array  //ID dos passageiros vinculados
+    passageiros: {type: Array, "default" : []}   //ID dos passageiros vinculados
 });
 
 const CaronaModel = mongoose.model('Carona', CaronaSchema);
@@ -94,14 +94,25 @@ class Carona{
       horario: this.body.horario,
       data: this.body.data,
       valor: this.body.valor,
-      passageiros: this.body.passageiros,
+      passageiros: this.passageiros,
       avaliacoes: this.body.avaliacoes
     };
   }
 
+  entrar(){
+    for(const key in this.body){
+      if (typeof this.body[key] !== 'string'){
+        this.body[key] = '';
+      }
+    }
+    this.body = {
+      $push: { passageiros: this.body.nome_passageiro}
+    }
+  }
+
   async entrarNaCarona(id){
     if(typeof id !== 'string') return;
-    this.valida();
+    this.entrar();
     if(this.errors.length > 0) return;
     this.carona = await CaronaModel.findByIdAndUpdate(id, this.body, {new: true});
   }
@@ -113,13 +124,15 @@ Carona.buscaCaronas = async function(){
   return caronas;
 }
 
+Carona.buscaCaronasFiltro = async function(de, para){
+  const caronas = await CaronaModel.find({cidade_origem:  de, cidade_destino: para})
+    .sort({criadosEm: -1});
+  return caronas;
+}
+
 Carona.buscaPorId = async function(id){
   const carona = await CaronaModel.findById(id);
   return carona;
-}
-
-Carona.entrarNaCarona = async function(id){
-  this.carona = await CaronaModel.findByIdAndUpdate(id, this.body, {new: true});
 }
 
 module.exports = Carona;

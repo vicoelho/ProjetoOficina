@@ -15,7 +15,7 @@ const CadastroSchema = new mongoose.Schema({
   modelo_do_veiculo: String,
   placa_do_veiculo: String,
   capacidade_do_veiculo: Number,
-  avaliacoes: Array //Lista de avaliações vinculadas ao usuário - Média
+  avaliacoes: {type: Array, "default" : []} //Lista de avaliações vinculadas ao usuário - Média
 });
 
 const CadastroModel = mongoose.model('Cadastro', CadastroSchema);
@@ -147,6 +147,24 @@ class Cadastro{
       capacidade_do_veiculo: this.body.capacidade_do_veiculo,
       avaliacoes: this.body.avaliacoes
     };
+  }
+
+  avaliar(){
+    for(const key in this.body){
+      if (typeof this.body[key] !== 'string'){
+        this.body[key] = '';
+      }
+    }
+    this.body = {
+      $push: { avaliacoes: this.body.avaliacao}
+    }
+  }
+
+  async avaliarPerfil(id){
+    if(typeof id !== 'string') return;
+    this.avaliar();
+    if(this.errors.length > 0) return;
+    this.cadastro = await CadastroModel.findByIdAndUpdate(id, this.body, {new: true});
   }
 };
 

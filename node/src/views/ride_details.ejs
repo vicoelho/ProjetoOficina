@@ -6,9 +6,10 @@
         <img src="">
     </div>
 </nav>
-<form class="general_div" method="POST" action="/detalhes/entrar/:id">
+<form class="general_div" method="POST" action="/detalhes/entrar/<%= carona._id %> ">
     <input type= "hidden" name= "_csrf" value= "<%= csrfToken%>">
     <input type= "hidden" name= "nome_passageiro" value= "<%= user.nome %>">
+    <input type= "hidden" name= "passageiros" value= "<%= carona.passageiros %>">
     <%- include('includes/messages'); %>
     <fieldset class="campo1">
         <legend>PARTIDA</legend>

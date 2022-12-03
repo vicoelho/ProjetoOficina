@@ -12,7 +12,7 @@ fieldset{
     margin-left: auto;
     margin-right: auto;
     width: 55vw;
-    height:700px;
+    height:800px;
     background-color: #202020;
     border: #202020;
     border-radius: 4px;
@@ -28,10 +28,32 @@ div{
     margin-top: 10px;
     margin-left: 20px;
 }
+form{
+    margin-top: 10px;
+    margin-left: 20px;
+}
 input{
     color: black;
     font-weight: 400;
 }
+.questionario_error{
+    margin-left: 160px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    width: fit-content;
+    color: rgba(255,60,0,50);
+  }
+.questionario_success{
+    margin-left: 160px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    width: fit-content;
+    color: rgba(60,255,0,50);
+  }
 .questionario{
     margin-left: 85px;
     margin-top: 10px;
