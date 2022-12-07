@@ -23,5 +23,5 @@ PASSO A PASSO:<br>
  - Link direto para o perfil do criador da carona.<br>
  - Entrar na carona e atualizar o registro do BD, quando a carona estiver lotada, a opção de entrar será desativada.<br>
  - Criptografia de senha no client-side.<br>
- - Cadastro de email ou números telefones repetidos ativam mensagem de erro.<br>
+ - Cadastro de emails ou números telefones repetidos geream mensagens de erro.<br>
  
