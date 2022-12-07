@@ -11,3 +11,12 @@ PASSO A PASSO:<br>
  2- Faça o comando "npm start" para iniciar o servidor.<br>
  3- Acesse o endereço http://localhost:3000 no navegador.
  
+ FUNÇÕES QUE TEMOS ORGULHO DE TER:<br>
+ - Redirecionamento para usuário não logados. (Usando middlewares)<br>
+ - Aviso de campos inválidos. (Usando Flash Mensages)<br>
+ - HTML dinâmico de acordo com o usuário conectado e com o banco de dados. (Usando arquivos.EJS)<br>
+ - Passagem de informações nos parametros da URL quando filtramos as caronas.<br>
+ - Média das avaliações nos perfis de motoristas.<br>
+ - Link direto para o perfil do criador da carona.<br>
+ - Entrar na carona e atualizar o registro do BD, quando a carona estiver lotada, a opção de entrar será desativada.<br>
+ 
